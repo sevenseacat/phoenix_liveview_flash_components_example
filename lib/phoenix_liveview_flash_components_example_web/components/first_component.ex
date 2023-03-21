@@ -21,6 +21,6 @@ defmodule PhoenixLiveviewFlashComponentsExampleWeb.FirstComponent do
   end
 
   def handle_event("click", _params, socket) do
-    {:noreply, put_flash(socket, :info, "First-level component button clicked!")}
+    {:noreply, put_flash!(socket, :info, "First-level component button clicked!")}
   end
 end

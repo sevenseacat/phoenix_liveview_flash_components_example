@@ -54,6 +54,8 @@ defmodule PhoenixLiveviewFlashComponentsExampleWeb do
       use Phoenix.LiveView,
         layout: {PhoenixLiveviewFlashComponentsExampleWeb.Layouts, :app}
 
+      on_mount PhoenixLiveviewFlashComponentsExampleWeb.Flash
+
       unquote(html_helpers())
     end
   end
@@ -61,6 +63,8 @@ defmodule PhoenixLiveviewFlashComponentsExampleWeb do
   def live_component do
     quote do
       use Phoenix.LiveComponent
+
+      import PhoenixLiveviewFlashComponentsExampleWeb.Flash, only: [put_flash!: 3]
 
       unquote(html_helpers())
     end
